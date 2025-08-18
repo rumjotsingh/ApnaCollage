@@ -42,6 +42,20 @@ void KadaneAlgo(int arr[], int n)
     }
     cout << "Maximum subarray sum is " << maxSoFar << endl;
 }
+int BuyAndSellStock(int prices[], int n)
+{
+    int buy = prices[0];
+    int maxProfit = 0;
+    for (int i = 1; i < n; i++)
+    {
+        if (buy > prices[i])
+        {
+            buy = prices[i];
+        }
+        maxProfit = max(maxProfit, prices[i] - buy);
+    }
+    return maxProfit;
+}
 
 int main()
 {
